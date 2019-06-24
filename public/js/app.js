@@ -270,6 +270,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -367,19 +368,68 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['nextUrl'],
   data: function data() {
     return {
+      sports: [],
       name: "",
       email: "",
       password: "",
-      password_confirmation: ""
+      password_confirmation: "",
+      address: '',
+      city: '',
+      zipCode: '',
+      sport_id: '',
+      level: ''
     };
+  },
+  beforeMount: function beforeMount() {
+    var _this = this;
+
+    axios.get("/api/sports/").then(function (response) {
+      return _this.sports = response.data;
+    });
   },
   methods: {
     handleSubmit: function handleSubmit(e) {
-      var _this = this;
+      var _this2 = this;
 
       e.preventDefault();
 
@@ -391,24 +441,34 @@ __webpack_require__.r(__webpack_exports__);
 
       var name = this.name;
       var email = this.email;
+      var address = this.address;
+      var zipCode = this.zipCode;
+      var city = this.city;
+      var sport_id = this.sport_id;
+      var level = this.level;
       var password = this.password;
       var c_password = this.password_confirmation;
       axios.post('api/register', {
         name: name,
         email: email,
         password: password,
-        c_password: c_password
+        c_password: c_password,
+        address: address,
+        zipCode: zipCode,
+        city: city,
+        sport_id: sport_id,
+        level: level
       }).then(function (response) {
         var data = response.data;
         localStorage.setItem('feater.user', JSON.stringify(data.user));
         localStorage.setItem('feater.jwt', data.token);
 
         if (localStorage.getItem('feater.jwt') != null) {
-          _this.$emit('loggedIn');
+          _this2.$emit('loggedIn');
 
-          var nextUrl = _this.$route.params.nextUrl;
+          var nextUrl = _this2.$route.params.nextUrl;
 
-          _this.$router.push(nextUrl != null ? nextUrl : '/');
+          _this2.$router.push(nextUrl != null ? nextUrl : '/');
         }
       });
     }
@@ -1419,6 +1479,218 @@ var render = function() {
                       }
                     }
                   })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "col-sm-4 col-form-label text-md-right",
+                    attrs: { for: "address" }
+                  },
+                  [_vm._v("Adresse")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.address,
+                        expression: "address"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      id: "address",
+                      type: "address",
+                      required: "",
+                      autofocus: ""
+                    },
+                    domProps: { value: _vm.address },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.address = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "col-sm-4 col-form-label text-md-right",
+                    attrs: { for: "zipCode" }
+                  },
+                  [_vm._v("Code Postal")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.zipCode,
+                        expression: "zipCode"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      id: "zipCode",
+                      type: "zipCode",
+                      required: "",
+                      autofocus: ""
+                    },
+                    domProps: { value: _vm.zipCode },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.zipCode = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "col-sm-4 col-form-label text-md-right",
+                    attrs: { for: "city" }
+                  },
+                  [_vm._v("Ville")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.city,
+                        expression: "city"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      id: "city",
+                      type: "city",
+                      required: "",
+                      autofocus: ""
+                    },
+                    domProps: { value: _vm.city },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.city = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("p", { staticClass: "labelCat" }, [_vm._v("Sport")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mdl-selectfield mb-4" }, [
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.sport_id,
+                          expression: "sport_id"
+                        }
+                      ],
+                      attrs: { sports: _vm.sports },
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.sport_id = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        }
+                      }
+                    },
+                    _vm._l(_vm.sports, function(sport) {
+                      return _c(
+                        "option",
+                        { key: sport.name, domProps: { value: sport.id } },
+                        [_vm._v(_vm._s(sport.name))]
+                      )
+                    }),
+                    0
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("p", { staticClass: "labelCat" }, [_vm._v("Categories")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mdl-selectfield mb-4" }, [
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.level,
+                          expression: "level"
+                        }
+                      ],
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.level = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        }
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "1" } }, [
+                        _vm._v("Débutant")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "2" } }, [
+                        _vm._v("Intermédiaire")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "3" } }, [
+                        _vm._v("Confirmé")
+                      ])
+                    ]
+                  )
                 ])
               ]),
               _vm._v(" "),
@@ -16357,7 +16629,7 @@ router.beforeEach(function (to, from, next) {
   if (to.matched.some(function (record) {
     return record.meta.requiresAuth;
   })) {
-    if (localStorage.getItem('bigStore.jwt') == null) {
+    if (localStorage.getItem('feater.jwt') == null) {
       next({
         path: '/login',
         params: {
@@ -16365,7 +16637,7 @@ router.beforeEach(function (to, from, next) {
         }
       });
     } else {
-      var user = JSON.parse(localStorage.getItem('bigStore.user'));
+      var user = JSON.parse(localStorage.getItem('feater.user'));
 
       if (to.matched.some(function (record) {
         return record.meta.is_admin;
