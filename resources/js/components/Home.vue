@@ -1,57 +1,25 @@
 <template>
     <div>
-        <div class="container">
-            <table class="table table-responsive table-striped">
-                <thead>
-                    <tr>
-                        <td></td>
-                        <td>Image</td>
-                        <td>Nom</td>
-                        <td>Email</td>
-                        <td>Role</td>
-                        <td>Adresse</td>
-                        <td>Code Postal</td>
-                        <td>Ville</td>
-                        <td>Sport</td>
-                        <td>Niveau</td>
-                        <td>Actions</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="text-xs-center text-md-center" v-for="(user,index) in users" v-bind:key="index" v-show="user.sport_id == userSport && user.level == userLevel && user.zipCode == userZipCode">
-                        <td>{{index+1}}</td>
-                        <td><img class="img-fluid" :src="'images/'+user.imageProfil" alt="profil picture"></td>
-                        <td v-model="user.name">{{user.name}}</td>
-                        <td v-model="user.email">{{user.email}}</td>
-                        <td v-model="user.is_admin" v-if="user.is_admin == 1">Admin</td>
-                        <td v-else >User</td>
-                        <td>{{user.address}}</td>
-                        <td>{{user.zipCode}}</td>
-                        <td v-if="user.city != null">{{user.city}}</td>
-                        <td v-else>Non dispo</td>
-                        <td v-for="(sport, index) in sports" v-bind:key="index" v-show="user.sport_id == sport.id">{{sport.name}}</td>
-                        <td>{{user.level}}</td>
-                        <td>
-                            <button @click="editingUser = user" raised color="teal darken-1">
-                                <i class="fa fa-cog white--text" aria-hidden="true"></i>
-                            </button>
-                            <button raised color="red darken-1" @click.prevent="deleteUser(user)">
-                                <i class="fa fa-times white--text" aria-hidden="true"></i>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <section>
+            <div class="d-flex height-50vh presentation align-items-center justify-content-center">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <h1 v-if="name">Bonjour {{ name }} !</h1>
+                    <h1 v-else>Bienvenue sur Feater !</h1>
+                </div>
+            </div>
+            <div class="nav height-50vh d-flex align-items-center justify-content-center" v-if="name">
+                <router-link class="mx-2" :to="'/search'">Chercher un partenaire > </router-link>
+                <router-link class="mx-2" :to="'/searchFood'">Chercher un resto Fit > </router-link>
+                <router-link class="mx-2" :to="'/tchat'">Tchat > </router-link>
+            </div>
+        </section>
     </div>
 
 </template>
 <script>
 export default {
     data() {
-        return {
-            users : [],
-            sports : [],  
+        return { 
             userName: null,
             userSport: null,
             userLevel: null,
@@ -61,22 +29,14 @@ export default {
         }
     },
     mounted() {
-            //this.setDefaults()
+            
         },
     methods : {
-        // setDefaults() {
-        //     if (this.isLoggedIn) {
-        //         let user = JSON.parse(localStorage.getItem('feater.user'))
-        //         this.name = user.name
-        //         this.userSport = user.sport_id
-        //         this.userLevel = user.level
-                
-        //     }
-        // },
+        
     },
     beforeMount() {
-            axios.get('/api/users').then(response => this.users = response.data)
-            axios.get('/api/sports').then(response => this.sports = response.data)
+            // axios.get('/api/users').then(response => this.users = response.data)
+            // axios.get('/api/sports').then(response => this.sports = response.data)
             
             if (this.isLoggedIn) {
                 let user = JSON.parse(localStorage.getItem('feater.user'))
@@ -89,14 +49,16 @@ export default {
             
             
         }, 
-    methods: {
-        deleteUser() {
-
-        },
-    },
-
 }
 </script>
 <style>
+.height-50vh {
+    height: 50vh;
+}
+.presentation {
+    height: 50vh;
+    background: linear-gradient(#e66465, #9198e5);
+    color:white;
+}
 
 </style>

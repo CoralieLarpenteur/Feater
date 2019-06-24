@@ -54,9 +54,14 @@
             logout(){
                 localStorage.removeItem('feater.jwt')
                 localStorage.removeItem('feater.user')
-                this.change()
-                this.$router.push('/')
+                window.location.assign("/")
             }
         }
     }
     </script>
+    <style>
+    .nav-link {
+        cursor: pointer;
+    }
+    </style>
+    

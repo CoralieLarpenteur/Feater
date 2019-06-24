@@ -8,6 +8,9 @@ import Vue from 'vue'
     import Login from './components/Login'
     import Register from './components/Register'
     import Admin from './components/Admin'
+    import Search from './components/SearchPatner'
+    import SearchFood from './components/SearchFood'
+    import Tchat from './components/Tchat'
     
 
     const router = new VueRouter({
@@ -18,6 +21,21 @@ import Vue from 'vue'
                 path: '/',
                 name: 'home',
                 component: Home
+            },
+            {
+                path: '/search',
+                name: 'search ',
+                component: Search
+            },
+            {
+                path: '/searchFood',
+                name: 'searchFood ',
+                component: SearchFood
+            },
+            {
+                path: '/tchat',
+                name: 'tchat ',
+                component: Tchat
             },
             {
                 path: '/admin',
