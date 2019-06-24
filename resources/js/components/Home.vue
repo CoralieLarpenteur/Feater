@@ -8,8 +8,11 @@
                         <td>Name</td>
                         <td>Email</td>
                         <td>Is admin ?</td>
-                        <td>Joined</td>
-                        <td>Total Orders</td>
+                        <td>Adresse</td>
+                        <td>Code Postal</td>
+                        <td>Ville</td>
+                        <td>Sport</td>
+                        <td>Level</td>
                         <td>Actions</td>
                     </tr>
                 </thead>
@@ -20,9 +23,12 @@
                         <td v-model="user.email">{{user.email}}</td>
                         <td v-model="user.is_admin" v-if="user.is_admin == 1">Admin</td>
                         <td v-else >User</td>
-                        <td>{{user.created_at}}</td>
-                        <td v-if="user.orders">{{user.orders.length}}</td>
-                        <td v-else>0</td>
+                        <td>{{user.address}}</td>
+                        <td>{{user.zipCode}}</td>
+                        <td v-if="user.city != null">{{user.city}}</td>
+                        <td v-else>Non dispo</td>
+                        <td v-for="(sport, index) in sports" v-bind:key="index" v-show="user.sport_id == sport.id">{{sport.name}}</td>
+                        <td>{{user.level}}</td>
                         <td>
                             <button @click="editingUser = user" raised color="teal darken-1">
                                 <i class="fa fa-cog white--text" aria-hidden="true"></i>
@@ -42,11 +48,13 @@
 export default {
     data() {
         return {
-            users : [],         
+            users : [],
+            sports : [],         
         }
     },
     beforeMount() {
             axios.get('/api/users').then(response => this.users = response.data)
+            axios.get('/api/sports').then(response => this.sports = response.data)
             
         }, 
     methods: {

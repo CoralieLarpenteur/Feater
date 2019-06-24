@@ -207,10 +207,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      users: []
+      users: [],
+      sports: []
     };
   },
   beforeMount: function beforeMount() {
@@ -218,6 +225,9 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get('/api/users').then(function (response) {
       return _this.users = response.data;
+    });
+    axios.get('/api/sports').then(function (response) {
+      return _this.sports = response.data;
     });
   },
   methods: {
@@ -972,7 +982,7 @@ var render = function() {
             _c(
               "router-link",
               { staticClass: "navbar-brand", attrs: { to: { name: "home" } } },
-              [_vm._v("Big Store")]
+              [_vm._v("Feater")]
             ),
             _vm._v(" "),
             _vm._m(0),
@@ -1172,11 +1182,33 @@ var render = function() {
                     )
                   : _c("td", [_vm._v("User")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(user.created_at))]),
+                _c("td", [_vm._v(_vm._s(user.address))]),
                 _vm._v(" "),
-                user.orders
-                  ? _c("td", [_vm._v(_vm._s(user.orders.length))])
-                  : _c("td", [_vm._v("0")]),
+                _c("td", [_vm._v(_vm._s(user.zipCode))]),
+                _vm._v(" "),
+                user.city != null
+                  ? _c("td", [_vm._v(_vm._s(user.city))])
+                  : _c("td", [_vm._v("Non dispo")]),
+                _vm._v(" "),
+                _vm._l(_vm.sports, function(sport, index) {
+                  return _c(
+                    "td",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: user.sport_id == sport.id,
+                          expression: "user.sport_id == sport.id"
+                        }
+                      ],
+                      key: index
+                    },
+                    [_vm._v(_vm._s(sport.name))]
+                  )
+                }),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(user.level))]),
                 _vm._v(" "),
                 _c("td", [
                   _c(
@@ -1216,7 +1248,8 @@ var render = function() {
                     ]
                   )
                 ])
-              ]
+              ],
+              2
             )
           }),
           0
@@ -1240,9 +1273,15 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("td", [_vm._v("Is admin ?")]),
         _vm._v(" "),
-        _c("td", [_vm._v("Joined")]),
+        _c("td", [_vm._v("Adresse")]),
         _vm._v(" "),
-        _c("td", [_vm._v("Total Orders")]),
+        _c("td", [_vm._v("Code Postal")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Ville")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Sport")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Level")]),
         _vm._v(" "),
         _c("td", [_vm._v("Actions")])
       ])

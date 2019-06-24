@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
                 'is_admin' => '0',
                 'address' => Str::random(25),
                 'zipCode' => rand(75000, 75020),
+                'sport_id' => rand(1,2),
                 'level' => rand(1,3),
 
             ]);

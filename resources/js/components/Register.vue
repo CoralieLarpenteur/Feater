@@ -47,7 +47,7 @@
                                 <div>
                                     <p class="labelCat">Categories</p>
                                     <div class="mdl-selectfield mb-4">
-                                        <select v-model="level" >
+                                        <select v-model="level">
                                             <option value="1" >Débutant</option>
                                              <option  value="2" >Intermédiaire</option>
                                               <option value="3" >Confirmé</option>
