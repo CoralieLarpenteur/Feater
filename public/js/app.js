@@ -173,7 +173,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      users: []
+    };
+  },
+  beforeMount: function beforeMount() {
+    var _this = this;
+
+    axios.get('/api/users').then(function (response) {
+      return _this.users = response.data;
+    });
+  },
+  methods: {
+    deleteUser: function deleteUser() {}
+  }
+});
 
 /***/ }),
 
@@ -1004,14 +1052,137 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("table", { staticClass: "table table-responsive table-striped" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "tbody",
+        _vm._l(_vm.users, function(user, index) {
+          return _c(
+            "tr",
+            { key: index, staticClass: "text-xs-center text-md-center" },
+            [
+              _c("td", [_vm._v(_vm._s(index + 1))]),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  model: {
+                    value: user.name,
+                    callback: function($$v) {
+                      _vm.$set(user, "name", $$v)
+                    },
+                    expression: "user.name"
+                  }
+                },
+                [_vm._v(_vm._s(user.name))]
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  model: {
+                    value: user.email,
+                    callback: function($$v) {
+                      _vm.$set(user, "email", $$v)
+                    },
+                    expression: "user.email"
+                  }
+                },
+                [_vm._v(_vm._s(user.email))]
+              ),
+              _vm._v(" "),
+              user.is_admin == 1
+                ? _c(
+                    "td",
+                    {
+                      model: {
+                        value: user.is_admin,
+                        callback: function($$v) {
+                          _vm.$set(user, "is_admin", $$v)
+                        },
+                        expression: "user.is_admin"
+                      }
+                    },
+                    [_vm._v("Admin")]
+                  )
+                : _c("td", [_vm._v("User")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.created_at))]),
+              _vm._v(" "),
+              user.orders
+                ? _c("td", [_vm._v(_vm._s(user.orders.length))])
+                : _c("td", [_vm._v("0")]),
+              _vm._v(" "),
+              _c("td", [
+                _c(
+                  "button",
+                  {
+                    attrs: { raised: "", color: "teal darken-1" },
+                    on: {
+                      click: function($event) {
+                        _vm.editingUser = user
+                      }
+                    }
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fa fa-cog white--text",
+                      attrs: { "aria-hidden": "true" }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    attrs: { raised: "", color: "red darken-1" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.deleteUser(user)
+                      }
+                    }
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fa fa-times white--text",
+                      attrs: { "aria-hidden": "true" }
+                    })
+                  ]
+                )
+              ])
+            ]
+          )
+        }),
+        0
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("Home")])])
+    return _c("thead", [
+      _c("tr", [
+        _c("td"),
+        _vm._v(" "),
+        _c("td", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Email")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Is admin ?")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Joined")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Total Orders")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Actions")])
+      ])
+    ])
   }
 ]
 render._withStripped = true
