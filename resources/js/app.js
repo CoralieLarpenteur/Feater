@@ -11,6 +11,7 @@ import Vue from 'vue'
     import Search from './components/SearchPatner'
     import SearchFood from './components/SearchFood'
     import Tchat from './components/Tchat'
+    import Profile from './components/Profile'
     
 
     const router = new VueRouter({
@@ -26,6 +27,11 @@ import Vue from 'vue'
                 path: '/search',
                 name: 'search ',
                 component: Search
+            },
+            {
+                path: '/profile',
+                name: 'profile ',
+                component: Profile
             },
             {
                 path: '/searchFood',
@@ -69,7 +75,7 @@ import Vue from 'vue'
                         next()
                     }
                     else {
-                        next({ name: 'userboard' })
+                        next({ name: 'profile' })
                     }
                 }
                 else if (to.matched.some(record => record.meta.is_user)) {
