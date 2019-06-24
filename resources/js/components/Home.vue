@@ -5,20 +5,22 @@
                 <thead>
                     <tr>
                         <td></td>
-                        <td>Name</td>
+                        <td>Image</td>
+                        <td>Nom</td>
                         <td>Email</td>
-                        <td>Is admin ?</td>
+                        <td>Role</td>
                         <td>Adresse</td>
                         <td>Code Postal</td>
                         <td>Ville</td>
                         <td>Sport</td>
-                        <td>Level</td>
+                        <td>Niveau</td>
                         <td>Actions</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="text-xs-center text-md-center" v-for="(user,index) in users" v-bind:key="index">
                         <td>{{index+1}}</td>
+                        <td><img class="img-fluid" :src="'images/'+user.imageProfil" alt="profil picture"></td>
                         <td v-model="user.name">{{user.name}}</td>
                         <td v-model="user.email">{{user.email}}</td>
                         <td v-model="user.is_admin" v-if="user.is_admin == 1">Admin</td>

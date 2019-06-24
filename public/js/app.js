@@ -213,6 +213,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1138,6 +1140,16 @@ var render = function() {
               [
                 _c("td", [_vm._v(_vm._s(index + 1))]),
                 _vm._v(" "),
+                _c("td", [
+                  _c("img", {
+                    staticClass: "img-fluid",
+                    attrs: {
+                      src: "images/" + user.imageProfil,
+                      alt: "profil picture"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
                 _c(
                   "td",
                   {
@@ -1267,11 +1279,13 @@ var staticRenderFns = [
       _c("tr", [
         _c("td"),
         _vm._v(" "),
-        _c("td", [_vm._v("Name")]),
+        _c("td", [_vm._v("Image")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Nom")]),
         _vm._v(" "),
         _c("td", [_vm._v("Email")]),
         _vm._v(" "),
-        _c("td", [_vm._v("Is admin ?")]),
+        _c("td", [_vm._v("Role")]),
         _vm._v(" "),
         _c("td", [_vm._v("Adresse")]),
         _vm._v(" "),
@@ -1281,7 +1295,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("td", [_vm._v("Sport")]),
         _vm._v(" "),
-        _c("td", [_vm._v("Level")]),
+        _c("td", [_vm._v("Niveau")]),
         _vm._v(" "),
         _c("td", [_vm._v("Actions")])
       ])

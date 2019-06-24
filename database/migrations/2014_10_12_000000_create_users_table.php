@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->integer('zipCode')->nullable();
             $table->integer('sport_id')->nullable();
             $table->string('level')->nullable();
+            $table->string('imageProfil')->default('user.jpg');
             $table->rememberToken();
             $table->timestamps();
         });
