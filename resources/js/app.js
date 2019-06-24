@@ -7,6 +7,7 @@ import Vue from 'vue'
     import Home from './components/Home'
     import Login from './components/Login'
     import Register from './components/Register'
+    import Admin from './components/Admin'
     
 
     const router = new VueRouter({
@@ -17,6 +18,11 @@ import Vue from 'vue'
                 path: '/',
                 name: 'home',
                 component: Home
+            },
+            {
+                path: '/admin',
+                name: 'admin ',
+                component: Admin
             },
             {
                 path: '/login',
