@@ -142,6 +142,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -205,7 +206,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      userName: null,
+      name: null,
       userSport: null,
       userLevel: null,
       userZipCode: null,
@@ -1915,17 +1916,6 @@ var render = function() {
                       ? _c(
                           "span",
                           [
-                            _vm.user_type == 0
-                              ? _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "nav-link",
-                                    attrs: { to: "/profile" }
-                                  },
-                                  [_vm._v(" Hi, " + _vm._s(_vm.name))]
-                                )
-                              : _vm._e(),
-                            _vm._v(" "),
                             _vm.user_type == 1
                               ? _c(
                                   "router-link",
@@ -1935,7 +1925,14 @@ var render = function() {
                                   },
                                   [_vm._v(" Hi, " + _vm._s(_vm.name))]
                                 )
-                              : _vm._e()
+                              : _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "nav-link",
+                                    attrs: { to: "/profile" }
+                                  },
+                                  [_vm._v(" Hi, " + _vm._s(_vm.name))]
+                                )
                           ],
                           1
                         )

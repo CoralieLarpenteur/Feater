@@ -20,7 +20,7 @@
 export default {
     data() {
         return { 
-            userName: null,
+            name: null,
             userSport: null,
             userLevel: null,
             userZipCode: null,
