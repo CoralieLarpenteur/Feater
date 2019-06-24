@@ -563,7 +563,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       users: [],
       sports: [],
-      userName: null,
+      name: null,
       userSport: null,
       userLevel: null,
       userZipCode: null,
@@ -2648,9 +2648,10 @@ var render = function() {
                     value:
                       user.sport_id == _vm.userSport &&
                       user.level == _vm.userLevel &&
-                      user.zipCode == _vm.userZipCode,
+                      user.zipCode == _vm.userZipCode &&
+                      _vm.name != user.name,
                     expression:
-                      "user.sport_id == userSport && user.level == userLevel && user.zipCode == userZipCode"
+                      "user.sport_id == userSport && user.level == userLevel && user.zipCode == userZipCode && name != user.name"
                   }
                 ],
                 key: index,

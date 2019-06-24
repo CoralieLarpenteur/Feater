@@ -18,7 +18,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-xs-center text-md-center" v-for="(user,index) in users" v-bind:key="index" v-show="user.sport_id == userSport && user.level == userLevel && user.zipCode == userZipCode">
+                    <tr class="text-xs-center text-md-center" v-for="(user,index) in users" v-bind:key="index" v-show="user.sport_id == userSport && user.level == userLevel && user.zipCode == userZipCode && name != user.name">
                         <td>{{index+1}}</td>
                         <td><img class="img-fluid" :src="'images/'+user.imageProfil" alt="profil picture"></td>
                         <td v-model="user.name">{{user.name}}</td>
@@ -52,7 +52,7 @@ export default {
         return {
             users : [],
             sports : [],  
-            userName: null,
+            name: null,
             userSport: null,
             userLevel: null,
             userZipCode: null,
