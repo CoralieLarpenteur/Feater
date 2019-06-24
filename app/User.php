@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'sport_id', 'level', 'address', 'zipCode', 'city'
     ];
 
     /**
@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function sports()
+        {
+            return $this->hasOne(Sport::class);
+        }
+    public function user_like()
+        {
+            return $this->hasMany(User_Like::class);
+        }
 }
