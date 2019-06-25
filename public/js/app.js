@@ -2443,10 +2443,17 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("div", [
-                _c("p", { staticClass: "labelCat" }, [_vm._v("Sport")]),
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "labelCat col-sm-4 col-form-label text-md-right"
+                  },
+                  [_vm._v("Sport")]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "mdl-selectfield mb-4" }, [
+                _c("div", { staticClass: "mdl-selectfield mb-4 col-md-6" }, [
                   _c(
                     "select",
                     {
@@ -2458,6 +2465,7 @@ var render = function() {
                           expression: "sport_id"
                         }
                       ],
+                      staticClass: "form-control",
                       attrs: { sports: _vm.sports },
                       on: {
                         change: function($event) {
@@ -2487,10 +2495,17 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("div", [
-                _c("p", { staticClass: "labelCat" }, [_vm._v("Categories")]),
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "labelCat col-sm-4 col-form-label text-md-right"
+                  },
+                  [_vm._v("Categories")]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "mdl-selectfield mb-4" }, [
+                _c("div", { staticClass: "mdl-selectfield mb-4 col-md-6" }, [
                   _c(
                     "select",
                     {
@@ -2502,6 +2517,7 @@ var render = function() {
                           expression: "level"
                         }
                       ],
+                      staticClass: "form-control",
                       on: {
                         change: function($event) {
                           var $$selectedVal = Array.prototype.filter

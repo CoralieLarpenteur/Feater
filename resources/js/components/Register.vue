@@ -36,18 +36,18 @@
                                         <input id="city" type="city" class="form-control" v-model="city" required autofocus>
                                     </div>
                                 </div>
-                                <div>
-                                    <p class="labelCat">Sport</p>
-                                    <div class="mdl-selectfield mb-4">
-                                        <select :sports="sports" v-model="sport_id">
-                                            <option  v-for="sport in sports" v-bind:key="sport.name" :value="sport.id">{{ sport.name }}</option>
+                                <div class="form-group row">
+                                    <label class="labelCat col-sm-4 col-form-label text-md-right">Sport</label>
+                                    <div class="mdl-selectfield mb-4 col-md-6">
+                                        <select :sports="sports" v-model="sport_id" class="form-control">
+                                            <option   v-for="sport in sports" v-bind:key="sport.name" :value="sport.id">{{ sport.name }}</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div>
-                                    <p class="labelCat">Categories</p>
-                                    <div class="mdl-selectfield mb-4">
-                                        <select v-model="level">
+                                <div class="form-group row">
+                                    <label class="labelCat col-sm-4 col-form-label text-md-right">Categories</label>
+                                    <div class="mdl-selectfield mb-4 col-md-6" >
+                                        <select v-model="level" class="form-control">
                                             <option value="1" >Débutant</option>
                                              <option  value="2" >Intermédiaire</option>
                                               <option value="3" >Confirmé</option>
