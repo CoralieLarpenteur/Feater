@@ -1,10 +1,11 @@
 <template>
         <div>
-            <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+            
+            <nav class="navbar navbar-expand-md navbar-light navbar-laravel navbar-dark">
                 <div class="container">
-                    <router-link :to="{name: 'home'}" class="navbar-brand">Feater</router-link>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <router-link :to="{name: 'home'}" class="navimg navbar-brand"><img src="images/logo.png" class="w-50"/> </router-link>
+                    <button class="navbar-toggler dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon light"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
@@ -64,5 +65,12 @@
     .nav-link {
         cursor: pointer;
     }
+    .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .custom-toggler.navbar-toggler {
+    border-color: rgb(255,102,203);
+    } 
     </style>
     

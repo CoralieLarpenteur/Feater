@@ -2,36 +2,35 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card card-default">
-                        <div class="card-header">Login</div>
                         <div class="card-body">
                             <form>
-                               
-                                <div class="form-group row">
-                                    <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
+                                <img src="images/logo.png" class="w-25 mx-auto d-block mt-5"/>
+                                <div class="form-group margin row">
                                     <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control" v-model="email" required autofocus>
+                                        <input id="email" type="email" placeholder="Address mail..." class="form-control" v-model="email" required autofocus>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control" v-model="password" required>
+                                        <input id="password" type="password" placeholder="Mot de passe..." class="form-control" v-model="password" required>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-0">
                                     <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn-primary" @click="handleSubmit">
-                                            Login
+                                        <button type="submit" class="btn button bg-white" @click="handleSubmit">
+                                            Connexion
                                         </button>
                                     </div>
                                 </div>
+                                <hr class="bg-white w-50 mt-5">
+                                <p class="text-center text-white mt-5">Vous n'avez pas encore de compte ?</p>
+                                <router-link class="btn button bg-white" to="/register">S'inscrire</router-link>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </div>
-        </div>
     </template>
      <script>
         export default {
@@ -69,3 +68,27 @@
             }
         }
     </script>
+    
+    <style scoped >
+         .form-group input{
+             border-radius: 50px;
+         }
+         .button{
+             border-radius: 20px;
+             width: 100%;
+         }
+         .container{
+             height: 800px;
+             background-color: #1C1818;
+         }
+         hr{
+             border-radius: 5px;
+             height: 2px;
+         }
+         .margin{
+             margin-top: 80px;
+         }
+
+     </style>
+    
+    

@@ -1,7 +1,14 @@
 import Vue from 'vue'
     import VueRouter from 'vue-router'
+    //import VueSwing from 'vue-swing'
+    import Carousel3d from 'vue-carousel-3d';
+//Vue.use(Carousel3d);
+
+    //Vue.component('vue-swing', VueSwing)
+    
 
     Vue.use(VueRouter)
+    
 
     import App from './components/App'
     import Home from './components/Home'

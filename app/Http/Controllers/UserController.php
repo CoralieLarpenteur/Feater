@@ -10,6 +10,7 @@ use Auth;
 
 
 
+
 class UserController extends Controller
 {
     public function index()
@@ -17,6 +18,11 @@ class UserController extends Controller
             return response()->json(User::all());
         }
 
+
+    // public function getUserMatch() {
+        
+    //     return response()->json(User::where('zipCode',  '=', Auth::user()->zipCode)->orderBy('id', 'desc')->get());
+    // }
     public function login(Request $request)
     {
         $status = 401;
@@ -57,4 +63,17 @@ class UserController extends Controller
             'token' => $user->createToken('feater')->accessToken,
         ]);
     }
+    public function store(Request $request)
+        {
+            $userLike = UserLike::create([
+                'user_id' => Auth()->user()->id,
+                'user_liked' => $request->description,
+            ]);
+
+            return response()->json([
+                'status' => (bool) $userLike,
+                'data'   => $userLike,
+                'message' => $userLike ? 'User liked!' : 'Error like user'
+            ]);
+        }
 }
