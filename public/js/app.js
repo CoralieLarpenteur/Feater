@@ -525,7 +525,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MapNutrition",
   data: function data() {
@@ -640,7 +639,7 @@ __webpack_require__.r(__webpack_exports__);
       this.infoWinOpen = !this.infoWinOpen;
     },
     getInfoWindowContent: function getInfoWindowContent(marker) {
-      return "<div >\n                        <h5 class=\"title float-left \" style=\"text-decoration: underline\">".concat(marker.name, "</h5>\n                        <p class=\"pt-2 float-left text-left\">\n                         ").concat(marker.description, "\n                        </p>\n\n\n                    </div>");
+      return "<div >\n                        <h5 class=\"title float-left \" style=\"text-decoration: underline\">".concat(marker.name, "</h5>\n                        <i class=\"float-left text-left pt-2\" > ").concat(marker.address, ",").concat(marker.zipCode, ", ").concat(marker.city, " </i>\n                        <p class=\"pt-3 float-left text-left\">\n                         ").concat(marker.description, "\n                        </p>\n\n                    </div>");
     }
   },
   mounted: function mounted() {
@@ -3064,7 +3063,12 @@ var staticRenderFns = [
     return _c("div", { staticClass: "restaurant-search-bar" }, [
       _c("input", {
         staticClass: "mr-2",
-        attrs: { type: "text", id: "search", placeholder: "Rechercher" }
+        attrs: {
+          disabled: "",
+          type: "text",
+          id: "search",
+          placeholder: "Rechercher"
+        }
       }),
       _vm._v(" "),
       _c("input", { attrs: { type: "submit", id: "submit", value: "GO" } })

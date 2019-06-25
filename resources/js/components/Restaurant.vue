@@ -17,7 +17,7 @@
                     <a id="card-button" href="#">Trouvez un lieu</a>
 
                     <div class="restaurant-search-bar">
-                        <input type="text" class="mr-2" id="search" placeholder="Rechercher">
+                        <input disabled type="text" class="mr-2" id="search" placeholder="Rechercher">
                         <input type="submit" id="submit" value="GO">
                     </div>
                 </div>
@@ -31,7 +31,6 @@
                 </div>
             </div>
         </section>
-
 
     </main>
     
@@ -147,10 +146,10 @@
             getInfoWindowContent: function (marker) {
                 return (`<div >
                             <h5 class="title float-left " style="text-decoration: underline">${marker.name}</h5>
-                            <p class="pt-2 float-left text-left">
+                            <i class="float-left text-left pt-2" > ${marker.address},${marker.zipCode}, ${marker.city} </i>
+                            <p class="pt-3 float-left text-left">
                              ${marker.description}
                             </p>
-
 
                         </div>`);
             },

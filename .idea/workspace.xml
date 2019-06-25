@@ -3,17 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="02935d0b-d4e9-4b4c-ba60-3059101e7f06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/restaurant/HealthInside.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/restaurant/HealthInside.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/restaurant/LeBichat.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/restaurant/LeBichat.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/restaurant/LeCentHuit.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/restaurant/LeCentHuit.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/restaurant/NousParadis.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/restaurant/NousParadis.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/restaurant/Nouschâteaudun.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/restaurant/Nouschâteaudun.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/restaurant/PH7Equilibre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/restaurant/PH7Equilibre.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Restaurant.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Restaurant.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,8 +72,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/js/components/Restaurant.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="249">
-                  <caret line="152" column="7" selection-start-line="152" selection-start-column="7" selection-end-line="152" selection-end-column="7" />
+                <state relative-caret-position="368">
+                  <caret line="149" column="42" selection-start-line="149" selection-start-column="42" selection-end-line="149" selection-end-column="42" />
                   <folding>
                     <element signature="n#style#0;n#h5#0;n#div#0;n#!!top" expanded="true" />
                   </folding>
@@ -121,10 +119,7 @@
             <entry file="file://$PROJECT_DIR$/resources/js/components/Restaurant.vue">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="273">
-                  <caret line="245" column="31" selection-start-line="245" selection-start-column="31" selection-end-line="245" selection-end-column="31" />
-                  <folding>
-                    <element signature="n#style#0;n#h5#0;n#div#0;n#!!top" expanded="true" />
-                  </folding>
+                  <caret line="244" column="31" selection-start-line="244" selection-start-column="31" selection-end-line="244" selection-end-column="31" />
                 </state>
               </provider>
             </entry>
@@ -345,13 +340,13 @@
               <item name="Feater" type="b2602c69:ProjectViewProjectNode" />
               <item name="Feater" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Feater" type="b2602c69:ProjectViewProjectNode" />
               <item name="Feater" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
               <item name="restaurant" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -451,12 +446,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561370760731</updated>
-      <workItem from="1561370764208" duration="26934000" />
+      <workItem from="1561370764208" duration="27832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26934000" />
+    <option name="totallyTimeSpent" value="27832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -464,7 +459,7 @@
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21101573" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21101573" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -727,8 +722,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/Restaurant.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="152" column="7" selection-start-line="152" selection-start-column="7" selection-end-line="152" selection-end-column="7" />
+        <state relative-caret-position="368">
+          <caret line="149" column="42" selection-start-line="149" selection-start-column="42" selection-end-line="149" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#h5#0;n#div#0;n#!!top" expanded="true" />
           </folding>
