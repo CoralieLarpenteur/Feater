@@ -4,7 +4,7 @@
             <div class="text">
                 <h5 class="container text-white ml-3">Trouvez votre partenaire idéal <br> proche de vous.</h5>
             </div>
-            <carousel-3d class="carousel">
+            <!-- <carousel-3d class="carousel">
                 
                 <slide :index="0">
                     <div class="row justify-content-around">
@@ -39,14 +39,14 @@
                     Slide 3 Content
                 </slide>
                 
-            </carousel-3d>
+            </carousel-3d> -->
 
         </div>
     </div>
 </template>
 
 <script>
-    import { Carousel3d, Slide } from 'vue-carousel-3d';
+   // import { Carousel3d, Slide } from 'vue-carousel-3d';
     
     export default {
     data() {
@@ -60,10 +60,7 @@
 
         }
     },
-    components: {
-        Carousel3d,
-        Slide
-    },
+    
     mounted() {
             
         },

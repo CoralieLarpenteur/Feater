@@ -1,8 +1,6 @@
 import Vue from 'vue'
     import VueRouter from 'vue-router'
-    //import VueSwing from 'vue-swing'
-    import Carousel3d from 'vue-carousel-3d';
-//Vue.use(Carousel3d);
+   
 
     //Vue.component('vue-swing', VueSwing)
     
@@ -32,27 +30,27 @@ import Vue from 'vue'
             },
             {
                 path: '/search',
-                name: 'search ',
+                name: 'search',
                 component: Search
             },
             {
                 path: '/profile',
-                name: 'profile ',
+                name: 'profile',
                 component: Profile
             },
             {
                 path: '/searchFood',
-                name: 'searchFood ',
+                name: 'searchFood',
                 component: SearchFood
             },
             {
                 path: '/tchat',
-                name: 'tchat ',
+                name: 'tchat',
                 component: Tchat
             },
             {
                 path: '/admin',
-                name: 'admin ',
+                name: 'admin',
                 component: Admin
             },
             {

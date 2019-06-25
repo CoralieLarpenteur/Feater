@@ -15,7 +15,9 @@
                             <router-link :to="{ name: 'login' }" class="nav-link" v-if="!isLoggedIn">Login</router-link>
                             <router-link :to="{ name: 'register' }" class="nav-link" v-if="!isLoggedIn">Register</router-link>
                             <span v-if="isLoggedIn">
-                                
+                                <router-link :to="{ name: 'search' }" class="nav-link" >Sport</router-link>
+                                <router-link :to="{ name: 'tchat' }" class="nav-link" >Tchat</router-link>
+                                <router-link :to="{ name: 'searchFood' }" class="nav-link" >Food</router-link>
                                 <router-link :to="{ name: 'admin' }" class="nav-link" v-if="user_type == 1"> Hi, {{name}}</router-link>
                                 <router-link :to="'/profile' " class="nav-link" v-else> Hi, {{name}}</router-link>
                             </span>
