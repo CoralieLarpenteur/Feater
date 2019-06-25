@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="container">
-            <h1 class="my-4">Restaurants :</h1>
+            <h1 class="my-4 text-white">Restaurants :</h1>
         </section>
     </div>
 </template>

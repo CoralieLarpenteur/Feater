@@ -48,12 +48,12 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-6">
-                                        <input id="password" type="password" placeholder="Passport..." class="form-control" v-model="password" required>
+                                        <input id="password" type="password" placeholder="Password..." class="form-control" v-model="password" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-6">
-                                        <input id="password-confirm" type="password" placeholder="Confirm Passport..."  class="form-control" v-model="password_confirmation" required>
+                                        <input id="password-confirm" type="password" placeholder="Confirm Password..."  class="form-control" v-model="password_confirmation" required>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-0">

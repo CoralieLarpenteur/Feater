@@ -94,49 +94,49 @@
 
 </script>
 <style scoped lang="scss">
-    $responsive-mobile: 425px;
-    .carousel{
-        margin-top: 50px;
-    }
-    .carousel-3d-slide{
-        background-color: transparent;
-        border: none;
-    }
+    
+    // .carousel{
+    //     margin-top: 50px;
+    // }
+    // .carousel-3d-slide{
+    //     background-color: transparent;
+    //     border: none;
+    // }
 
-    @media (max-width: $responsive-mobile) {
-        .border, .nutrition, .sport, .message{
-            height: 150px;
-            width: 40%;
+    // @media (max-width: $responsive-mobile) {
+    //     .border, .nutrition, .sport, .message{
+    //         height: 150px;
+    //         width: 40%;
 
-        }
-        .sport{
-            background-image: url('../../../public/images/carousel1.png');
-            background-size: 140px;
-            background-repeat: no-repeat;
-        }
-        .nutrition{
-            background-image: url('../../../public/images/nutrition.png');
-            background-size: 140px;
-            background-repeat: no-repeat;
-        }
-        .message{
-            background-image: url('../../../public/images/message.png');
-            background-size: 140px;
-            background-repeat: no-repeat;
-        }
+    //     }
+    //     .sport{
+    //         background-image: url('../../../public/images/carousel1.png');
+    //         background-size: 140px;
+    //         background-repeat: no-repeat;
+    //     }
+    //     .nutrition{
+    //         background-image: url('../../../public/images/nutrition.png');
+    //         background-size: 140px;
+    //         background-repeat: no-repeat;
+    //     }
+    //     .message{
+    //         background-image: url('../../../public/images/message.png');
+    //         background-size: 140px;
+    //         background-repeat: no-repeat;
+    //     }
         .background{
             background-image: url('../../../public/images/fondhome.png');
             background-size: 500px;
             height: 890px;
         }
-        h5{
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding-top: 400px;
+    //     h5{
+    //         display: flex;
+    //         justify-content: flex-start;
+    //         align-items: center;
+    //         padding-top: 400px;
 
-        }
-    }
+    //     }
+    // }
 
 </style>
 
