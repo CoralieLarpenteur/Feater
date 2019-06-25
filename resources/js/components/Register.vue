@@ -19,6 +19,42 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label for="address" class="col-sm-4 col-form-label text-md-right">Adresse</label>
+                                    <div class="col-md-6">
+                                        <input id="address" type="address" class="form-control" v-model="address" required autofocus>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="zipCode" class="col-sm-4 col-form-label text-md-right">Code Postal</label>
+                                    <div class="col-md-6">
+                                        <input id="zipCode" type="zipCode" class="form-control" v-model="zipCode" required autofocus>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="city" class="col-sm-4 col-form-label text-md-right">Ville</label>
+                                    <div class="col-md-6">
+                                        <input id="city" type="city" class="form-control" v-model="city" required autofocus>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="labelCat">Sport</p>
+                                    <div class="mdl-selectfield mb-4">
+                                        <select :sports="sports" v-model="sport_id">
+                                            <option  v-for="sport in sports" v-bind:key="sport.name" :value="sport.id">{{ sport.name }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="labelCat">Categories</p>
+                                    <div class="mdl-selectfield mb-4">
+                                        <select v-model="level" >
+                                            <option value="1" >Débutant</option>
+                                             <option  value="2" >Intermédiaire</option>
+                                              <option value="3" >Confirmé</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
                                         <input id="password" type="password" class="form-control" v-model="password" required>
@@ -49,11 +85,20 @@
         props : ['nextUrl'],
         data(){
             return {
+                sports : [],
                 name : "",
                 email : "",
                 password : "",
-                password_confirmation : ""
+                password_confirmation : "",
+                address:'',
+                city:'',
+                zipCode:'',
+                sport_id:'',
+                level:'',
             }
+        },
+        beforeMount() {
+            axios.get("/api/sports/").then(response => this.sports = response.data)
         },
         methods : {
             handleSubmit(e) {
@@ -65,9 +110,14 @@
                 }
                 let name = this.name
                 let email = this.email
+                let address = this.address
+                let zipCode = this.zipCode
+                let city = this.city
+                let sport_id = this.sport_id
+                let level = this.level
                 let password = this.password
                 let c_password = this.password_confirmation
-                axios.post('api/register', {name, email, password, c_password}).then(response => {
+                axios.post('api/register', {name, email, password, c_password, address, zipCode, city, sport_id, level}).then(response => {
                     let data = response.data
                     localStorage.setItem('feater.user', JSON.stringify(data.user))
                     localStorage.setItem('feater.jwt', data.token)

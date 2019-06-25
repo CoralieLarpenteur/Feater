@@ -3,10 +3,20 @@ import Vue from 'vue'
 
     Vue.use(VueRouter)
 
+    import * as VueGoogleMaps from "vue2-google-maps";
+
+    Vue.use(VueGoogleMaps, {
+        load: {
+            key: "AIzaSyDSe50JrFASadaw3cA2trvIEziDTCel4pE",
+            libraries: "places" // necessary for places input
+        }
+    });
+
     import App from './components/App'
     import Home from './components/Home'
     import Login from './components/Login'
     import Register from './components/Register'
+    import Restaurant from './components/Restaurant'
     
 
     const router = new VueRouter({
@@ -28,18 +38,23 @@ import Vue from 'vue'
                 name: 'register',
                 component: Register
             },
+            {
+                path: '/restaurants',
+                name: 'restaurant',
+                component: Restaurant
+            },
         ],
     })
 
     router.beforeEach((to, from, next) => {
         if (to.matched.some(record => record.meta.requiresAuth)) {
-            if (localStorage.getItem('bigStore.jwt') == null) {
+            if (localStorage.getItem('feater.jwt') == null) {
                 next({
                     path: '/login',
                     params: { nextUrl: to.fullPath }
                 })
             } else {
-                let user = JSON.parse(localStorage.getItem('bigStore.user'))
+                let user = JSON.parse(localStorage.getItem('feater.user'))
                 if (to.matched.some(record => record.meta.is_admin)) {
                     if (user.is_admin == 1) {
                         next()
